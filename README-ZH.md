@@ -1,7 +1,7 @@
 # Sticky SD Card Debugger
 
 <div align="center">
-  <img src="page.jpg" alt="reTerminal Sticky SD Card Debugger" width="400">
+  <img src="page.jpg" alt="reTerminal Sticky SD Card Debugger" width="425">
 </div>
 
 这是面向 Seeed Studio reTerminal Sticky 的 ESP-IDF SD 卡信息、文件管理与诊断工具，支持目标容量范围为 4 GB～256 GB 的 FAT32 和 exFAT SD 卡。

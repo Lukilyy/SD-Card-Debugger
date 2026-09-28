@@ -1,7 +1,7 @@
 # Sticky SD Card Debugger
 
 <div align="center">
-  <img src="page.jpg" alt="reTerminal Sticky SD Card Debugger" width="400">
+  <img src="page.jpg" alt="reTerminal Sticky SD Card Debugger" width="425">
 </div>
 
 An ESP-IDF SD card information, file-management, and diagnostic utility for
