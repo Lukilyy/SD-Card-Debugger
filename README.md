@@ -1,5 +1,9 @@
 # Sticky SD Card Debugger
 
+<div align="center">
+  <img src="page.jpg" alt="reTerminal Sticky SD Card Debugger" width="400">
+</div>
+
 An ESP-IDF SD card information, file-management, and diagnostic utility for
 the Seeed Studio reTerminal Sticky. It supports FAT32 and exFAT cards in the
 target capacity range of 4 GB to 256 GB.
