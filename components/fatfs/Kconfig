@@ -1,0 +1,2 @@
+# Preserve all ESP-IDF 5.4 FatFs menuconfig options in this thin override.
+source "$IDF_PATH/components/fatfs/Kconfig"

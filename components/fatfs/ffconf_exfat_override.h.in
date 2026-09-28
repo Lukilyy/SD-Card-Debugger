@@ -1,0 +1,38 @@
+#pragma once
+
+/* Load the unmodified configuration belonging to the active ESP-IDF first. */
+#include "@IDF_FATFS_DIR@/src/ffconf.h"
+
+/* Project-local differences required for exFAT on the Sticky SDSPI path. */
+#undef FF_FS_EXFAT
+#define FF_FS_EXFAT 1
+
+/* 4 GB to 256 GB stays within 32-bit LBA and preserves MBR formatting. */
+#undef FF_LBA64
+#define FF_LBA64 0
+
+/* Avoid SDSPI erase/TRIM failures during mkfs; normal reads/writes remain. */
+#undef FF_USE_TRIM
+#define FF_USE_TRIM 0
+
+/*
+ * ESP-IDF 5.4 maps FF_USE_LABEL directly to CONFIG_FATFS_USE_LABEL.
+ * Kconfig intentionally leaves a disabled bool undefined, which is safe in
+ * preprocessor #if expressions but not in the ordinary C expression enabled
+ * by FatFs' exFAT directory parser.  Normalize the public FatFs option without
+ * inventing or changing any CONFIG_FATFS_* symbol.
+ */
+#undef FF_USE_LABEL
+#ifdef CONFIG_FATFS_USE_LABEL
+#define FF_USE_LABEL 1
+#else
+#define FF_USE_LABEL 0
+#endif
+
+#if FF_USE_LFN == 0
+#error "exFAT requires FatFs long filename support"
+#endif
+
+#if FF_FS_EXFAT != 1 || FF_LBA64 != 0 || FF_USE_TRIM != 0
+#error "Unexpected project FatFs exFAT configuration"
+#endif

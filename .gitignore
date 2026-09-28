@@ -1,0 +1,62 @@
+# ESP-IDF output and local configuration. Keep sdkconfig.defaults and
+# dependencies.lock in the repository for reproducible builds.
+/build/
+/build-*/
+/managed_components/
+/sdkconfig
+/sdkconfig.old
+/sdkconfig.*.old
+/compile_commands.json
+/CMakeCache.txt
+/CMakeFiles/
+
+# Editor and IDE settings
+.vscode/
+.idea/
+.vs/
+.settings/
+*.code-workspace
+*.sublime-workspace
+
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+
+# Local credentials, logs, temporary files, and backups
+.env
+.env.*
+!.env.example
+*.log
+*.tmp
+*.temp
+*.bak
+*.backup
+*.orig
+*.rej
+*.swp
+*.swo
+*~
+
+# Local test output and crash dumps
+/test-results/
+/coverage/
+/htmlcov/
+*.gcda
+*.gcno
+*.profraw
+*.profdata
+*.core
+core.*
+
+# OS metadata
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
